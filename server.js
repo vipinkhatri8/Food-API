@@ -12,14 +12,27 @@ mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log('✅ MongoDB Connected Successfully!'))
 .catch(err => console.log('❌ Connection Error:', err));
 
+// // Basic route
+// app.get('/', (req, res) => {
+//   res.json({ message: 'Food App API is working!' });
+// });
+
+// // User model and routes yahan add karenge
+
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running on port ${PORT}`);
+// });
+
+// Routes
+app.use('/api/auth', require('./routes/auth'));
+
 // Basic route
 app.get('/', (req, res) => {
   res.json({ message: 'Food App API is working!' });
 });
 
-// User model and routes yahan add karenge
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
