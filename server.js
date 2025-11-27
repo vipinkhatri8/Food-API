@@ -59,6 +59,8 @@ app.use('/api/auth', require('./routes/auth'));
 app.use("/api/home", require("./routes/home"));
 app.use("/api/orders", require("./routes/orders"));
 app.use("/api/items", require("./routes/items"));
+// Add this with other route imports
+app.use("/api/food-items", require("./routes/foodItems"));
 
 // DUMMY DATA INSERTION ENDPOINT
 app.post('/api/insert-dummy-data', async (req, res) => {
